@@ -21,7 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:functional": "APP_CONF_PATH='./dist/conf' APP_ENV='test' cucumber-js test/functional/features --require-module ts-node/register --require 'test/functional/steps/**/*.ts'",
     "test:functional:report": "APP_CONF_PATH='./dist/conf' cucumber-js test/functional/features --require-module ts-node/register --require 'test/functional/steps/**/*.ts' --format json:/tmp/test-report/functional_tests_report.json",
-    "docker:build": "docker build -t permit:$npm_package_version -t permit:latest .",
+    "docker:build": "docker build -t gearedminds/permit:$npm_package_version -t gearedminds/permit:latest .",
     "docker:build:tester": "docker build -t $permit-test:$npm_package_version -t $permit-test:latest -f test/functional/tester/tester-dockerfile .",
     "docker:build:mock": "docker build -t permit-mock:$npm_package_version -t permit-mock:latest -f test/mock/dockerfile .",
     "docker:remove": "docker rm $npm_package_config_dockerApiImageName:$npm_package_version",
