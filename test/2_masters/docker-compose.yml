@@ -1,0 +1,22 @@
+version: "2.1"
+
+services:
+  api1:
+    image: $API_IMAGE_TAG
+    environment:
+      - APP_CONF_PATH=./conf
+      - APP_ENV=local
+      - NODE_ENV=production
+      - API_PORT=8081
+      - API_HTTPS_PORT=8381
+    network_mode: "host"
+
+  api2:
+    image: $API_IMAGE_TAG
+    environment:
+      - APP_CONF_PATH=./conf
+      - APP_ENV=local
+      - NODE_ENV=production
+      - API_PORT=8082
+      - API_HTTPS_PORT=8382
+    network_mode: "host"

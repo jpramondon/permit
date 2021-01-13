@@ -1,0 +1,20 @@
+{
+    "confReloadDelay": -1,
+    "max_forks": 0,
+    "API_PORT": 8080,
+    "API_BASE_URL": "http://localhost",
+    "API_BASE_PATH": "/",
+    "PG_HOST": "localhost",
+    "PG_PORT": "5432",
+    "PG_DATABASE": "permit",
+    "PG_USER": "permit",
+    "PG_PWD": "permit",
+    "PG_CONNECT_MAX_RETRIES": "10",
+    "ROLES_ROOT_PATH": "permit.apps",
+    "PREFERENCES_ROOT_PATH": "permit.prefs",
+    "ROLE_APP_DEPTH": 3,
+    "ROLE_TARGET_DEPTH": 4,
+    "IS_ACCESS_CONTROL_MIDDLEWARE_ENABLED": true,
+    "IS_MUTE_ALL_ROUTES_MIDDLEWARE_ENABLED": false,
+    "UNPROTECTED_PATHS":["/_health", "/permissions", "/preferences", "/profile"]
+}

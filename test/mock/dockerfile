@@ -1,0 +1,20 @@
+FROM node:lts-stretch
+
+LABEL project-name ='Permit2-Mock'
+
+ENV MOCK_MODE=true
+ENV APP_CONF_PATH=./conf
+ENV APP_ENV=local
+
+WORKDIR /home/permit/
+
+COPY node_modules/ ./node_modules/
+COPY dist/src ./src
+COPY dist/test ./test
+COPY dist/conf ./conf
+COPY package.json ./
+COPY version.json ./
+
+EXPOSE 8080
+
+ENTRYPOINT ["node","test/mock/src/index.js"]

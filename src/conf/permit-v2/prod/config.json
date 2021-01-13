@@ -1,0 +1,23 @@
+{
+    "confReloadDelay": 300000,
+    "max_forks": 1,
+    "graceful_stop_wait_duration": 5000,
+    "db_update_pause_duration": 5000,
+    "db_update_check_attempts": 5,
+    "API_PORT": 8080,
+    "API_BASE_URL": "http://localhost",
+    "API_BASE_PATH": "/",
+    "PG_HOST": "pg-permit-tn-prd-sales-execution.aivencloud.com",
+    "PG_PORT": "19709",
+    "PG_DATABASE": "permit",
+    "PG_USER": "permitproduser",
+    "LOG_DB_QUERIES": false,
+    "ROLES_ROOT_PATH": "permit.apps",
+    "PREFERENCES_ROOT_PATH": "permit.prefs",
+    "ROLE_APP_DEPTH": 3,
+    "ROLE_TARGET_DEPTH": 4,
+    "IS_ACCESS_CONTROL_MIDDLEWARE_ENABLED": true,
+    "IS_MUTE_ALL_ROUTES_MIDDLEWARE_ENABLED": true,
+    "UNPROTECTED_PATHS":["/_health", "/permissions", "/preferences", "/profile"],
+    "OAUTH2_URL": "https://oauth2.googleapis.com"
+}

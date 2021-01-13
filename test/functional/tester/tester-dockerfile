@@ -1,0 +1,28 @@
+FROM node:lts-stretch
+
+LABEL project-name ='Permit2-Tester'
+
+RUN apt-get update && apt-get -y install postgresql-client jq
+
+WORKDIR /home/permit/
+
+RUN chown -R 1001:1001 /home/permit/
+
+COPY package.json ./
+COPY node_modules/ ./node_modules/
+
+# Copy sources as some executions use ts-node
+COPY src/ ./src
+COPY test/functional ./test/functional
+
+# Also copy dist as some executions needs the transpiled js
+COPY dist/ ./dist
+COPY version.json ./
+COPY tsconfig.json ./
+
+RUN cp test/functional/tester/run-test.sh /usr/local/bin/run-test
+RUN chmod +x /usr/local/bin/run-test
+
+USER 1001
+
+CMD sleep infinity

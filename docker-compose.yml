@@ -1,0 +1,45 @@
+version: "2.1"
+
+services:
+  api:
+    image: $API_IMAGE_TAG
+    ports:
+      - "${DOCKER_API_PORT}8080"
+    healthcheck:
+      test: ["CMD-SHELL", "curl --output /dev/null --silent --head --fail http://localhost:8080/_health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - PG_HOST=postgres
+      - APP_CONF_PATH
+      - APP_ENV
+      - OAUTH2_URL=http://auth-server:8000
+
+  postgres:
+    image: postgres:12
+    ports:
+      - "${DOCKER_PG_PORT}5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U permit"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      - POSTGRES_USER=permit
+      - POSTGRES_PASSWORD=permit
+      - POSTGRES_DB=permit
+  
+  auth-server:
+    image: gearedminds/swaggermockserver:1.0.0
+    volumes:
+      - ./test/fakeauth/:/home/node/app/src/custom_behaviour/
+    working_dir: /home/node/app
+    healthcheck:
+      test: wget -O - http://localhost:8000/api/mock/_health > /dev/null
+      interval: 5s
+      timeout: 3s
+      retries: 5

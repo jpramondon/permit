@@ -1,0 +1,10 @@
+{
+    "confReloadDelay": -1,
+    "PG_HOST": "pg-sales-execution-global-test-tn-npr-sales-execution.aivencloud.com",
+    "PG_PORT": "11830",
+    "PG_DEFAULT_DATABASE": "defaultdb",
+    "PG_TARGET_DATABASE": "permit",
+    "PG_USER": "sales-exec-test",
+    "PG_PWD": "pno6gjao4qym73d4",
+    "PG_SSL_MODE": true
+}

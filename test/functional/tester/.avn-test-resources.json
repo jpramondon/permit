@@ -1,0 +1,11 @@
+{
+    "resources": [
+        {
+            "name": "pg-permit",
+            "type": "postgresql",
+            "project": "tn-npr-sales-execution",
+            "service": "pg-sales-execution-global-test",
+            "database": "permit-${HASH}"
+        }
+    ]
+}

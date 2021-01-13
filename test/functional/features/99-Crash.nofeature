@@ -1,0 +1,10 @@
+@Crash
+Feature: Crash feature 
+
+    Background:
+        Given the test context is initialized
+        And the API is up and running
+        And the database is available
+
+    Scenario: Do the crash
+        When I deliberately make this scenario crash
