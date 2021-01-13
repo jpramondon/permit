@@ -16,6 +16,7 @@ If you feel like Permit is not going to cover your application's specific permis
  * first ask yourself how far it is from covering them, if it's really worth it to go beyond what Permit already does, and is your permission design well engineered, ...
  * if the answer is still that you need your own permission system, then you are free to build it and be on your own. 
 
+Permit comes with an admin web application that helps creating and updating applications, roles and memberships.
 
 ## Getting started immediately
 
